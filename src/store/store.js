@@ -7,6 +7,6 @@ export const store = configureStore({
   reducer: {
     campers: campersReducer,
     filters: filtersReducer,
-    favorites: favouritesReducer,
+    favourites: favouritesReducer,
   },
 });

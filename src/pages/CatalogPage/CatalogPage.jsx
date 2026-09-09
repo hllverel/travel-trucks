@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCampersThunk } from '../../store/campers/campersSlice.js';
+import { fetchCampersThunk } from '../../store/campers/campersSlice';
 import {
   selectVisibleCampers,
   selectCampersStatus,
   selectCampersError,
 } from '../../store/campers/campersSelectors';
+import CamperCard from '../../components/CamperCard/CamperCard';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -27,9 +28,11 @@ const CatalogPage = () => {
 
   return (
     <div>
-      <h1>Catalog Page</h1>
-      <p>Loaded {campers.length} campers</p>
-      <pre>{JSON.stringify(campers, null, 2)}</pre>
+      <ul>
+        {campers.map((camper) => (
+          <CamperCard key={camper.id} camper={camper} />
+        ))}
+      </ul>
     </div>
   );
 };
