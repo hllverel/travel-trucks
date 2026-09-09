@@ -5,11 +5,13 @@ import styles from './Header.module.css';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Link to="/" className={styles.logo}>
-        <span className={styles.logoTravel}>Travel</span>
-        <span className={styles.logoTrucks}>Trucks</span>
+      <Link to="/">
+        <svg className={styles.logo}>
+          <use href="/public/symbol-defs.svg#TravelTrucksLogo"></use>
+        </svg>
       </Link>
       <Navigation />
+      <div className={styles.logo}></div>
     </header>
   );
 };
