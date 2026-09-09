@@ -1,0 +1,40 @@
+.hero {
+  background: rgba(0, 0, 0, 0.2);
+  background-image: url("/images/Herobg.png");
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 571px;
+  margin-left: 65px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: var(--inputs);
+  margin-bottom: 40px;
+}
+
+.button {
+  border-radius: 200px;
+  width: 173px;
+  height: 56px;
+  background: var(--grey-green);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-align: center;
+}

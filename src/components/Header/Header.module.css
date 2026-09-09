@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px solid #f2f4f7;
+  border-bottom: 1px solid var(--inputs);
   padding: 24px 64px;
   height: 72px;
   display: flex;

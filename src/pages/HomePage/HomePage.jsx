@@ -1,7 +1,9 @@
+import Hero from '../../components/Hero/Hero.jsx';
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div style={{ height: '100%' }}>
+      <Hero />
     </div>
   );
 };
