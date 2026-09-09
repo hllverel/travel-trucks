@@ -1,8 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "./auth/authSlice.js";
+import { configureStore } from '@reduxjs/toolkit';
+import campersReducer from './campers/campersSlice';
+import filtersReducer from './filters/filtersSlice';
+import favoritesReducer from './favorites/favoritesSlice';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
+    campers: campersReducer,
+    filters: filtersReducer,
+    favorites: favoritesReducer,
   },
 });
