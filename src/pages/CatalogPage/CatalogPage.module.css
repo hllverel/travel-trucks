@@ -1,3 +1,9 @@
+.layout {
+  display: flex;
+  gap: 65px;
+  justify-content: center;
+}
+
 .camperlistdiv {
   display: flex;
   flex-direction: column;

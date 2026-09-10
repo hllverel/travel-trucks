@@ -1,5 +1,6 @@
 .header {
-  border-bottom: 1px solid var(--inputs);
+  border-bottom: 1px solid var(--badges);
+  background: var(--inputs);
   padding: 24px 64px;
   height: 72px;
   display: flex;

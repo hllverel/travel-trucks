@@ -35,7 +35,7 @@ const CatalogPage = () => {
   // }
 
   return (
-    <div>
+    <div className={styles.layout}>
       <FilterForm />
 
       <div className={styles.camperlistdiv}>

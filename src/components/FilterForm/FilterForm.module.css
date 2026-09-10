@@ -1,0 +1,141 @@
+.filterssidebar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 24px;
+  width: 360px;
+  background: var(--inputs);
+  height: 100%;
+}
+
+.locationsearch {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.searchdiv {
+  position: relative;
+}
+
+.searchdiv svg {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.locationsearch input {
+  border-radius: 12px;
+  padding: 18px 20px 18px 48px;
+  height: 56px;
+  background: var(--white);
+  border: none;
+}
+
+.locationsearch input:focus {
+  outline: none;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.filtersheader {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+}
+
+.filters fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  margin: 0;
+}
+
+.filters fieldset legend {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.filters fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  border: 1px var(--text);
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 1px var(--text);
+  cursor: pointer;
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  accent-color: var(--text);
+}
+
+.filterssidebar button[type="submit"] {
+  border-radius: 200px;
+  width: 312px;
+  height: 56px;
+  background: var(--grey-green);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.filterssidebar button[type="submit"]:hover {
+  background: var(--green-hover);
+}
+
+.filterssidebar button[type="button"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  width: 312px;
+  height: 56px;
+  background: var(--white);
+}
+
+.filterssidebar button[type="button"] svg {
+  width: 24px;
+  height: 24px;
+  stroke: #000;
+}
+
+.filterssidebar button[type="button"]:hover {
+  border: 1px solid var(--green-hover);
+}

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilters, resetFilters } from '../../store/filters/filtersSlice';
-import { resetVisibleCount } from '../../store/campers/campersSlice';
-import { formatCamperField } from '../../utils/formatText';
+import { setFilters, resetFilters } from '../../store/filters/filtersSlice.js';
+import { resetVisibleCount } from '../../store/campers/campersSlice.js';
+import { formatCamperField } from '../../utils/formatText.js';
+import styles from './FilterForm.module.css';
 
 const CAMPER_FORMS = ['alcove', 'panelTruck', 'fullyIntegrated', 'semiIntegrated'];
 const ENGINES = ['diesel', 'petrol', 'hybrid', 'electric'];
@@ -37,7 +38,8 @@ const FilterForm = () => {
     );
   };
 
-  const handleSearchClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     dispatch(setFilters({ location, form, engine, transmission, features }));
     dispatch(resetVisibleCount());
   };
@@ -53,86 +55,96 @@ const FilterForm = () => {
   };
 
   return (
-    <div>
-      <label>
-        Location
-        <input
-          type="text"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          placeholder="City"
-        />
-      </label>
+    <form className={styles.filterssidebar} onSubmit={handleSubmit}>
+        <label className={styles.locationsearch}>
+            Location
+            <div className={styles.searchdiv}>
+                <svg>
+                    <use href="/symbol-defs.svg#Map" />
+                </svg>
+                <input
+                    type="text"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    placeholder="City"
+                />
+            </div>
+        </label>
 
-      <fieldset>
-        <legend>Vehicle equipment</legend>
-        {FEATURES.map((feature) => (
-          <label key={feature}>
-            <input
-              type="checkbox"
-              checked={features.includes(feature)}
-              onChange={() => handleFeatureChange(feature)}
-            />
-            {formatCamperField(feature)}
-          </label>
-        ))}
-      </fieldset>
+        <div className={styles.filters}>
+            <p className={styles.filtersheader}>Filters</p>
+            
+            <fieldset>
+                <legend>Equipment</legend>
+                {FEATURES.map((feature) => (
+                <label key={feature}>
+                    <input
+                    type="checkbox"
+                    checked={features.includes(feature)}
+                    onChange={() => handleFeatureChange(feature)}
+                    />
+                    {formatCamperField(feature)}
+                </label>
+                ))}
+            </fieldset>
 
-      <fieldset>
-        <legend>Vehicle type</legend>
-        {CAMPER_FORMS.map((value) => (
-          <label key={value}>
-            <input
-              type="radio"
-              name="form"
-              value={value}
-              checked={form === value}
-              onChange={(e) => setForm(e.target.value)}
-            />
-            {formatCamperField(value)}
-          </label>
-        ))}
-      </fieldset>
+            <fieldset>
+                <legend>Camper form</legend>
+                {CAMPER_FORMS.map((value) => (
+                <label key={value}>
+                    <input
+                    type="radio"
+                    name="form"
+                    value={value}
+                    checked={form === value}
+                    onChange={(e) => setForm(e.target.value)}
+                    />
+                    {formatCamperField(value)}
+                </label>
+                ))}
+            </fieldset>
 
-      <fieldset>
-        <legend>Engine</legend>
-        {ENGINES.map((value) => (
-          <label key={value}>
-            <input
-              type="radio"
-              name="engine"
-              value={value}
-              checked={engine === value}
-              onChange={(e) => setEngine(e.target.value)}
-            />
-            {formatCamperField(value)}
-          </label>
-        ))}
-      </fieldset>
+            <fieldset>
+                <legend>Engine</legend>
+                {ENGINES.map((value) => (
+                <label key={value}>
+                    <input
+                    type="radio"
+                    name="engine"
+                    value={value}
+                    checked={engine === value}
+                    onChange={(e) => setEngine(e.target.value)}
+                    />
+                    {formatCamperField(value)}
+                </label>
+                ))}
+            </fieldset>
 
-      <fieldset>
-        <legend>Transmission</legend>
-        {TRANSMISSIONS.map((value) => (
-          <label key={value}>
-            <input
-              type="radio"
-              name="transmission"
-              value={value}
-              checked={transmission === value}
-              onChange={(e) => setTransmission(e.target.value)}
-            />
-            {formatCamperField(value)}
-          </label>
-        ))}
-      </fieldset>
+            <fieldset>
+                <legend>Transmission</legend>
+                {TRANSMISSIONS.map((value) => (
+                <label key={value}>
+                    <input
+                    type="radio"
+                    name="transmission"
+                    value={value}
+                    checked={transmission === value}
+                    onChange={(e) => setTransmission(e.target.value)}
+                    />
+                    {formatCamperField(value)}
+                </label>
+                ))}
+            </fieldset>
+        </div>
 
-      <button type="button" onClick={handleSearchClick}>
-        Search
-      </button>
-      <button type="button" onClick={handleClearFiltersClick}>
-        Clear filters
-      </button>
-    </div>
+      <button type="submit">Search</button>
+        <button type="button" onClick={handleClearFiltersClick}>
+            <svg>
+                <use href="/symbol-defs.svg#Close" />
+            </svg>
+            Clear filters
+        </button>
+    </form>
   );
 };
 
