@@ -8,6 +8,7 @@ import {
   selectHasMore,
 } from '../../store/campers/campersSelectors.js';
 import CamperCard from '../../components/CamperCard/CamperCard.jsx';
+import FilterForm from '../../components/FilterForm/FilterForm.jsx';
 import styles from './CatalogPage.module.css';
 
 const CatalogPage = () => {
@@ -25,27 +26,38 @@ const CatalogPage = () => {
     dispatch(loadMore());
   };
 
-  if (status === 'loading') {
-    return <p>Loading...</p>;
-  }
+  // if (status === 'loading') {
+  //   return <p>Loading...</p>;
+  // }
 
-  if (status === 'failed') {
-    return <p>Error: {error}</p>;
-  }
+  // if (status === 'failed') {
+  //   return <p>Error: {error}</p>;
+  // }
 
   return (
-    <div className={styles.camperlistdiv}>
-      <ul className={styles.camperlist}>
-        {campers.map((camper) => (
-          <CamperCard key={camper.id} camper={camper} />
-        ))}
-      </ul>
+    <div>
+      <FilterForm />
 
-      {hasMore && (
-        <button className={styles.loadmorebtn} type="button" onClick={handleLoadMoreClick}>
-          Load more
-        </button>
-      )}
+      <div className={styles.camperlistdiv}>
+        {status === 'loading' && <p>Loading...</p>}
+        {status === 'failed' && <p>Error: {error}</p>}
+
+        {status === 'succeeded' && (
+          <>
+        <ul className={styles.camperlist}>
+          {campers.map((camper) => (
+            <CamperCard key={camper.id} camper={camper} />
+          ))}
+        </ul>
+
+        {hasMore && (
+          <button className={styles.loadmorebtn} type="button" onClick={handleLoadMoreClick}>
+            Load more
+          </button>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
