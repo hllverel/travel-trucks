@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavourite } from '../../store/favourites/favouritesSlice.js';
 import { formatCamperField } from '../../utils/formatText';
+import styles from './CamperCard.module.css';
 
 const CamperCard = ({ camper }) => {
   const dispatch = useDispatch();
@@ -19,37 +20,43 @@ const CamperCard = ({ camper }) => {
   };
 
   return (
-    <li>
-      <div>
-        <img src={camper.gallery[0]?.thumb} alt={camper.name} />
-        <button type="button" onClick={handleFavouriteClick}>
-          <svg>
-            <use href={`/symbol-defs.svg#Favourite`} />
-          </svg>
-        </button>
+    <li className={styles.campercard}>
+      <div className={styles.camperimgdiv}>
+        <img className={styles.camperimg} src={camper.gallery[0]?.thumb} alt={camper.name} />
       </div>
 
-      <div>
-        <div>
+      <div className={styles.camperinfo}>
+        <div className={styles.camperhead}>
           <h2>{camper.name}</h2>
-          <p>€{camper.price.toFixed(2)}</p>
+          <div className={styles.camperheadright}>
+            <h2>€{camper.price.toFixed(2)}</h2>
+            <button type="button" onClick={handleFavouriteClick}>
+              <svg className={styles.favourite}>
+                <use href={`/symbol-defs.svg#Favourite`} />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div>
-          <svg>
-            <use href="/symbol-defs.svg#Star" />
-          </svg>
-          <span>{camper.rating} ({camper.reviews.length} Reviews)</span>
+        <div className={styles.campersubhead}>
+          <div>
+            <svg>
+              <use href="/symbol-defs.svg#Star" />
+            </svg>
+            <span>{camper.rating} ({camper.reviews.length} Reviews)</span>
+          </div>
 
-          <svg>
-            <use href="/symbol-defs.svg#Map" />
-          </svg>
-          <span>{displayLocation}</span>
+          <div>
+            <svg>
+              <use href="/symbol-defs.svg#Map" />
+            </svg>
+            <span>{displayLocation}</span>
+          </div>
         </div>
 
-        <p>{camper.description}</p>
+        <p className={styles.camperdescription}>{camper.description}</p>
 
-        <ul>
+        <ul className={styles.badgelist}>
           <li>
             <svg>
               <use href="/symbol-defs.svg#Engine" />
@@ -70,7 +77,7 @@ const CamperCard = ({ camper }) => {
           </li>
         </ul>
 
-        <button type="button" onClick={handleShowMoreClick}>
+        <button className={styles.showmorebtn} type="button" onClick={handleShowMoreClick}>
           Show more
         </button>
       </div>

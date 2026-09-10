@@ -58,7 +58,8 @@ h2 {
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33333;
-  color: var(--badges);
+  color: var(--main);
+  margin: 0;
 }
 
 p {
@@ -72,4 +73,11 @@ button {
   all: unset;
   text-decoration: none;
   cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
