@@ -5,6 +5,7 @@ import {
   fetchCamperDetailsThunk,
   clearCamperDetails,
 } from '../../store/camperDetails/camperDetailsSlice.js';
+import Gallery from '../../components/Gallery/Gallery.jsx';
 
 const CamperDetailsPage = () => {
   const { id } = useParams();
@@ -36,7 +37,8 @@ const CamperDetailsPage = () => {
 
   return (
     <div>
-      <h1>{camper.name}</h1>
+      <Gallery images={camper.gallery} name={camper.name} />
+      <h2>{camper.name}</h2>
       <p>Rating: {camper.rating} ({camper.reviews.length} Reviews)</p>
       <p>Location: {camper.location}</p>
       <p>Price: €{camper.price.toFixed(2)}</p>
