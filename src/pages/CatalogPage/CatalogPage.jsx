@@ -9,6 +9,7 @@ import {
 } from '../../store/campers/campersSelectors.js';
 import CamperCard from '../../components/CamperCard/CamperCard.jsx';
 import FilterForm from '../../components/FilterForm/FilterForm.jsx';
+import Loader from '../../components/Loader/Loader.jsx';
 import styles from './CatalogPage.module.css';
 
 const CatalogPage = () => {
@@ -39,7 +40,7 @@ const CatalogPage = () => {
       <FilterForm />
 
       <div className={styles.camperlistdiv}>
-        {status === 'loading' && <p>Loading...</p>}
+        {status === 'loading' && <Loader />}
         {status === 'failed' && <p>Error: {error}</p>}
 
         {status === 'succeeded' && (

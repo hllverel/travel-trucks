@@ -112,6 +112,7 @@
   letter-spacing: -0.01em;
   color: var(--white);
   text-align: center;
+  cursor: pointer;
 }
 
 .showmorebtn:hover {
