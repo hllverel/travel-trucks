@@ -29,9 +29,9 @@ const CamperCard = ({ camper }) => {
         <div className={styles.camperhead}>
           <h2>{camper.name}</h2>
           <div className={styles.camperheadright}>
-            <h2>€{camper.price.toFixed(2)}</h2>
+            <h2>€{camper.price}</h2>
             <button type="button" onClick={handleFavouriteClick}>
-              <svg className={styles.favourite}>
+              <svg className={isFavourite ? styles.favouriteActive : styles.favourite}>
                 <use href={`/symbol-defs.svg#Favourite`} />
               </svg>
             </button>

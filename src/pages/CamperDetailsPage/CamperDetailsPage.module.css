@@ -1,0 +1,71 @@
+.layout {
+  padding: 64px;
+}
+
+.tophalf {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 88px;
+}
+
+.camperinfo {
+  border-radius: 16px;
+  padding: 24px;
+  width: 650px;
+  background: var(--inputs);
+  margin-bottom: 16px;
+}
+
+.camperhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.favourite {
+  width: 24px;
+  height: 24px;
+}
+
+.campersubhead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.campersubhead div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.campersubhead span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.campersubhead svg {
+  width: 16px;
+  height: 16px;
+}
+
+.camperinfo h2 {
+  margin-bottom: 24px;
+}
+
+.camperinfo p {
+  color: var(--text);
+}
+
+.reviews {
+  margin-bottom: 24px;
+}
+
+.bottomhalf {
+  display: flex;
+  gap: 48px;
+}

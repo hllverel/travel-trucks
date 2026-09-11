@@ -1,4 +1,5 @@
 import { formatCamperField } from '../../utils/formatText';
+import styles from './VehicleDetails.module.css';
 
 const FEATURE_FIELDS = [
   'AC',
@@ -25,10 +26,10 @@ const VehicleDetails = ({ camper }) => {
   ];
 
   return (
-    <div>
+    <div className={styles.layout}>
       <h2>Vehicle details</h2>
 
-      <ul>
+      <ul className={styles.detailslist}>
         <li>{formatCamperField(camper.transmission)}</li>
         <li>{formatCamperField(camper.engine)}</li>
         <li>{formatCamperField(camper.form)}</li>
@@ -37,10 +38,12 @@ const VehicleDetails = ({ camper }) => {
         ))}
       </ul>
 
+      <hr className={styles.divider}></hr>
+
       <table>
         <tbody>
           {specs.map((spec) => (
-            <tr key={spec.label}>
+            <tr className={styles.table} key={spec.label}>
               <td>{spec.label}</td>
               <td>{spec.value}</td>
             </tr>

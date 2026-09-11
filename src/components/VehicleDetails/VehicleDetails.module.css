@@ -1,0 +1,48 @@
+.layout {
+  border-radius: 16px;
+  padding: 24px;
+  width: 650px;
+  background: var(--inputs);
+}
+
+.layout h2 {
+  margin-bottom: 16px;
+}
+
+.detailslist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detailslist li {
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 48px;
+  text-align: center;
+  background: var(--badges);
+  mix-blend-mode: multiply;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #101828;
+}
+
+.divider {
+  margin: 16px 0;
+  border: none;
+  height: 1px;
+  background-color: var(--gray-light);
+}
+
+table {
+  width: 100%;
+}
+
+.table {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}

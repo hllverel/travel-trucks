@@ -4,19 +4,17 @@ const STAR_COUNT = 5;
 
 const Reviews = ({ reviews }) => {
   return (
-    <div>
-      <h2>Reviews</h2>
-
+    <div className={styles.layout}>
       <ul>
         {reviews.map((review, index) => (
-          <li key={index}>
-            <div>
+          <li className={styles.reviewcard} key={index}>
+            <div className={styles.namearea}>
               <div className={styles.avatar}>
                 {review.reviewer_name.charAt(0)}
               </div>
-              <div>
+              <div className={styles.nameandstars}>
                 <p>{review.reviewer_name}</p>
-                <div>
+                <div className={styles.stars}>
                   {Array.from({ length: STAR_COUNT }).map((_, starIndex) => (
                     <svg
                       key={starIndex}
@@ -32,7 +30,7 @@ const Reviews = ({ reviews }) => {
                 </div>
               </div>
             </div>
-            <p>{review.comment}</p>
+            <p className={styles.comment}>{review.comment}</p>
           </li>
         ))}
       </ul>
