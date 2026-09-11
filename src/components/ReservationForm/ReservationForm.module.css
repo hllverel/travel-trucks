@@ -1,0 +1,46 @@
+.layout {
+  border: 1px solid var(--gray-light);
+  border-radius: 16px;
+  padding: 44px;
+  width: 641px;
+}
+
+.layhout h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin: 0 0 8px 0;
+}
+
+.layout p {
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+
+.reservationform label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--gray);
+  margin-bottom: 14px;
+}
+
+.reservationform .input {
+  border-radius: 12px;
+  padding: 18px;
+  height: 60px;
+  background: var(--inputs);
+  border: none;
+}
+
+.reservationform button {
+  border-radius: 200px;
+  width: 100%;
+  height: 56px;
+  background: var(--grey-green);
+  text-align: center;
+  margin: 24px 0 0 0;
+  font-weight: 500;
+  color: var(--white);
+}

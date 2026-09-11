@@ -50,16 +50,16 @@ const ReservationForm = () => {
   }
 
   return (
-    <div>
+    <div className={styles.layout}>
       <h3>Book your campervan now</h3>
       <p>Stay connected! We are always ready to help you.</p>
 
-      <form onSubmit={handleSubmit} noValidate>
+      <form className={styles.reservationform} onSubmit={handleSubmit} noValidate>
         <label>
-          Name*
           <input
             type="text"
             value={name}
+            placeholder="Name*"
             onChange={(e) => setName(e.target.value)}
             className={errors.name ? styles.inputError : styles.input}
           />
@@ -74,10 +74,10 @@ const ReservationForm = () => {
         {errors.name && <p className={styles.errorText}>{errors.name}</p>}
 
         <label>
-          Email*
           <input
             type="email"
             value={email}
+            placeholder="Email*"
             onChange={(e) => setEmail(e.target.value)}
             className={errors.email ? styles.inputError : styles.input}
           />
