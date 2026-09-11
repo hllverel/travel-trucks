@@ -6,7 +6,8 @@ import {
   clearCamperDetails,
 } from '../../store/camperDetails/camperDetailsSlice.js';
 import Gallery from '../../components/Gallery/Gallery.jsx';
-import VehicleDetails from '../../components/VehicleDetails/VehicleDetails';
+import VehicleDetails from '../../components/VehicleDetails/VehicleDetails.jsx';
+import Reviews from '../../components/Reviews/Reviews.jsx';
 
 const CamperDetailsPage = () => {
   const { id } = useParams();
@@ -45,6 +46,7 @@ const CamperDetailsPage = () => {
       <p>Price: €{camper.price.toFixed(2)}</p>
       <p>{camper.description}</p>
       <VehicleDetails camper={camper} />
+      <Reviews reviews={camper.reviews} />
     </div>
   );
 };
