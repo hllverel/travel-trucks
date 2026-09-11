@@ -8,6 +8,7 @@ import {
 import Gallery from '../../components/Gallery/Gallery.jsx';
 import VehicleDetails from '../../components/VehicleDetails/VehicleDetails.jsx';
 import Reviews from '../../components/Reviews/Reviews.jsx';
+import ReservationForm from '../../components/ReservationForm/ReservationForm.jsx';
 
 const CamperDetailsPage = () => {
   const { id } = useParams();
@@ -47,6 +48,7 @@ const CamperDetailsPage = () => {
       <p>{camper.description}</p>
       <VehicleDetails camper={camper} />
       <Reviews reviews={camper.reviews} />
+      <ReservationForm />
     </div>
   );
 };
