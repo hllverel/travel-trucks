@@ -7,7 +7,7 @@ const Header = () => {
     <header className={styles.header}>
       <Link to="/">
         <svg className={styles.logo}>
-          <use href="/public/symbol-defs.svg#TravelTrucksLogo"></use>
+          <use href="/symbol-defs.svg#TravelTrucksLogo"></use>
         </svg>
       </Link>
       <Navigation />
