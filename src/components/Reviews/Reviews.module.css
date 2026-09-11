@@ -46,6 +46,14 @@
   height: 16px;
 }
 
+.starFilled {
+  --color4: var(--rating);
+}
+
+.starEmpty {
+  --color4: var(--gray-light);
+}
+
 .comment {
   color: var(--text);
 }

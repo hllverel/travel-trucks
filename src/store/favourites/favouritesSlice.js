@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const loadFavouritesFromStorage = () => {
   try {
-    const stored = localStorage.getItem('favorites');
+    const stored = localStorage.getItem('favourites');
     return stored ? JSON.parse(stored) : [];
   } catch {
     return [];
@@ -14,10 +14,10 @@ const initialState = {
 };
 
 const favouritesSlice = createSlice({
-  name: 'favorites',
+  name: 'favourites',
   initialState,
   reducers: {
-    toggleFavorite: (state, action) => {
+    toggleFavourite: (state, action) => {
       const camper = action.payload;
       const index = state.items.findIndex((item) => item.id === camper.id);
 
