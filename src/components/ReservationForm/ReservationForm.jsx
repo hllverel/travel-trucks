@@ -52,14 +52,15 @@ const ReservationForm = () => {
   return (
     <div className={styles.layout}>
       <h3>Book your campervan now</h3>
-      <p>Stay connected! We are always ready to help you.</p>
+      <p className={styles.subtext}>Stay connected! We are always ready to help you.</p>
 
       <form className={styles.reservationform} onSubmit={handleSubmit} noValidate>
         <label>
+          {errors.name && <span className={styles.errorlabel}>Name*</span>}
           <input
             type="text"
             value={name}
-            placeholder="Name*"
+            placeholder={errors.name ? '' : 'Name*'}
             onChange={(e) => setName(e.target.value)}
             className={errors.name ? styles.inputError : styles.input}
           />
@@ -70,14 +71,16 @@ const ReservationForm = () => {
               </svg>
             </span>
           )}
+          {errors.name && <p className={styles.errorText}>{errors.name}</p>}
         </label>
-        {errors.name && <p className={styles.errorText}>{errors.name}</p>}
+        
 
         <label>
+          {errors.email && <span className={styles.errorlabel}>Email*</span>}
           <input
             type="email"
             value={email}
-            placeholder="Email*"
+            placeholder={errors.email ? '' : 'Email*'}
             onChange={(e) => setEmail(e.target.value)}
             className={errors.email ? styles.inputError : styles.input}
           />
@@ -88,8 +91,8 @@ const ReservationForm = () => {
               </svg>
             </span>
           )}
+          {errors.email && <p className={styles.errorText}>{errors.email}</p>}
         </label>
-        {errors.email && <p className={styles.errorText}>{errors.email}</p>}
 
         <button type="submit">Send</button>
       </form>

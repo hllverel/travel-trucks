@@ -10,6 +10,7 @@ import Gallery from '../../components/Gallery/Gallery.jsx';
 import VehicleDetails from '../../components/VehicleDetails/VehicleDetails.jsx';
 import Reviews from '../../components/Reviews/Reviews.jsx';
 import ReservationForm from '../../components/ReservationForm/ReservationForm.jsx';
+import Loader from '../../components/Loader/Loader.jsx'
 import styles from './CamperDetailsPage.module.css';
 
 const CamperDetailsPage = () => {
@@ -30,7 +31,7 @@ const CamperDetailsPage = () => {
   }, [dispatch, id]);
 
   if (status === 'loading') {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (status === 'failed') {
@@ -87,10 +88,10 @@ const CamperDetailsPage = () => {
       </div>
       <div>
         <h2 className={styles.reviews}>Reviews</h2>
-        <di className={styles.bottomhalf}>
+        <div className={styles.bottomhalf}>
           <Reviews reviews={camper.reviews} />
           <ReservationForm />
-        </di>
+        </div>
       </div>
     </div>
   );

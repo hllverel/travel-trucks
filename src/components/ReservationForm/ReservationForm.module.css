@@ -13,7 +13,7 @@
   margin: 0 0 8px 0;
 }
 
-.layout p {
+.subtext {
   color: var(--gray);
   margin-bottom: 24px;
 }
@@ -34,6 +34,14 @@
   border: none;
 }
 
+.reservationform .inputError {
+  border-radius: 12px;
+  padding: 18px;
+  height: 60px;
+  background: #ffdfdf;
+  border: 1px solid #e44848;
+}
+
 .reservationform button {
   border-radius: 200px;
   width: 100%;
@@ -43,4 +51,38 @@
   margin: 24px 0 0 0;
   font-weight: 500;
   color: var(--white);
+}
+
+.reservationform label {
+  position: relative;
+}
+
+.reservationform label svg {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 18px;
+  transform: translateY(-240%);
+}
+
+.errorlabel {
+  border-radius: 8px;
+  padding: 0 8px;
+  width: 54px;
+  height: 16px;
+  background: #ffdfdf;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #ec383b;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  left: 18px;
+}
+
+.errorText {
+  font-weight: 400;
+  color: #e44848;
+  position: absolute;
+  top: 60px;
 }
