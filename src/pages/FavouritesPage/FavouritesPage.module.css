@@ -1,0 +1,15 @@
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 64px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding: 64px;
+}

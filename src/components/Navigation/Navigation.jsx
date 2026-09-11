@@ -21,6 +21,14 @@ const Navigation = () => {
       >
         Catalog
       </NavLink>
+      <NavLink
+        to="/favourites"
+        className={({ isActive }) =>
+          isActive ? styles.linkActive : styles.link
+        }
+      >
+        Favourites
+    </NavLink>
     </nav>
   );
 };
